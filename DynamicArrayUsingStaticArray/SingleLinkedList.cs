@@ -30,6 +30,8 @@ namespace DynamicArrayUsingStaticArray
             }
         }
 
+        public int Size() { return size; }
+
         public bool IsEmpty() { return size == 0; }
 
         public void AddNodeToHead(T data)//O(1)
@@ -137,6 +139,15 @@ namespace DynamicArrayUsingStaticArray
                 temp = temp.next;
             }
             return false;
+        }
+
+        public T GetHeadData()
+        {
+            if (IsEmpty())
+            {
+                throw new InvalidOperationException("Linked List Empty");
+            }
+            return head.data;
         }
 
         public override string ToString()

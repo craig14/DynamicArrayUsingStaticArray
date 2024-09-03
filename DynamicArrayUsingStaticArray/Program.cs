@@ -3,7 +3,7 @@ using DynamicArrayUsingStaticArray;
 using System.ComponentModel;
 
 Console.WriteLine("Hello, World! Select the datatype:");
-Console.WriteLine("1)Dynamic Array\n2)Single LinkedList");
+Console.WriteLine("1)Dynamic Array\n2)Single LinkedList\n3)Stack");
 string key = Console.ReadLine();
 
 switch (key)
@@ -61,6 +61,28 @@ switch (key)
         list.Remove(2);
         Console.WriteLine(list.ToString());
         Console.WriteLine("Add null to tail");
+        break;
+    case "3":
+        MyStack<string> stack = new MyStack<string>();
+        stack.Push("1");
+        stack.Push("2");
+        stack.Push("3");
+        stack.Push("11");
+        stack.Push("-11");
+        Console.WriteLine(stack.ToString());
+        Console.WriteLine("Push 100");
+        stack.Push("100");
+        Console.WriteLine(stack.ToString());
+        Console.WriteLine("Pop");
+        stack.Pop();
+        Console.WriteLine(stack.ToString());
+        Console.WriteLine("Peek: " + stack.Peek());
+        Console.WriteLine("Pop");
+        stack.Pop();
+        Console.WriteLine("Pop");
+        stack.Pop();
+        Console.WriteLine("Size: " + stack.Size());
+        Console.WriteLine(stack.ToString());
         break;
     default:
         Console.WriteLine("Invalid selection!");
