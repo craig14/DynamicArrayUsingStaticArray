@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DynamicArrayUsingStaticArray.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -12,11 +13,11 @@ namespace DynamicArrayUsingStaticArray
     /// </summary>
     public class MyStack<T>
     {
-        private SingleLinkedList<T> list;
+        private ISingleLinkedList<T> list;
 
-        public MyStack() 
+        public MyStack(SingleLinkedList<T> list) 
         {
-            list = new SingleLinkedList<T>();
+            this.list = list;
         }
 
         public int Size() { return list.Size(); }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DynamicArrayUsingStaticArray.Interfaces;
+using DynamicArrayUsingStaticArray.UtilityClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DynamicArrayUsingStaticArray
 {
-    public class SingleLinkedList<T>
+    public class SingleLinkedList<T> : ISingleLinkedList<T>
     {
         private int size;
         private Node<T> head;
@@ -17,17 +19,6 @@ namespace DynamicArrayUsingStaticArray
             size = 0;
             head = null;
             tail = null;
-        }
-
-        public class Node<T>
-        {
-            public T data;
-            public Node<T> next;
-            public Node(T data, Node<T> next)
-            {
-                this.data = data;
-                this.next = next;
-            }
         }
 
         public int Size() { return size; }
@@ -85,7 +76,7 @@ namespace DynamicArrayUsingStaticArray
             {
                 throw new InvalidOperationException("Linked List Empty");
             }
-            for(int i=0; i < size - 1 ; i++)
+            for(int i=0; i < size - 2 ; i++)
             {
                 temp = temp.next;
             }

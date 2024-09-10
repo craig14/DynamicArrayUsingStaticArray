@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using DynamicArrayUsingStaticArray;
+using DynamicArrayUsingStaticArray.Interfaces;
 using System.ComponentModel;
 
 Console.WriteLine("Hello, World! Select the datatype:");
@@ -63,7 +64,8 @@ switch (key)
         Console.WriteLine("Add null to tail");
         break;
     case "3":
-        MyStack<string> stack = new MyStack<string>();
+        SingleLinkedList<string> list1 = new SingleLinkedList<string>();
+        MyStack<string> stack = new MyStack<string>(list1);
         stack.Push("1");
         stack.Push("2");
         stack.Push("3");
